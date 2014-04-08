@@ -17,7 +17,7 @@ class TestJSONEncoding < Minitest::Test
   end
 
   def test_encode_with_bad_input
-    skip if RUBY_VERSION == "2.0.0"
+    skip if %w(1.8.7 2.0.0).include?(RUBY_VERSION)
     assert_raises(Fog::JSON::EncodeError) { Fog::JSON.encode("\x82\xAC\xEF") }
   end
 end
