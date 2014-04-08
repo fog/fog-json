@@ -2,12 +2,17 @@ require "minitest/autorun"
 require "fog/json"
 
 class TestJSONEncoding < Minitest::Test
-  def test_encode_with_valid_hash
+  def test_encode_array
+    @array = %W(one two three)
+    @expected = %q{["one","two","three"]}
+    assert_equal @expected, Fog::JSON.encode(@array)
+  end
+
+  def test_encode_hash
     @hash = {
-      "key" => "value",
-      "array" => %W(one two three)
+      "key" => "value"
     }
-    @expected = %q{{"key":"value","array":["one","two","three"]}}
+    @expected = %q{{"key":"value"}}
     assert_equal @expected, Fog::JSON.encode(@hash)
   end
 
