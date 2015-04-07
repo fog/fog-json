@@ -1,6 +1,6 @@
-require "fog/json/version"
 require "fog/core"
 require "multi_json"
+require File.expand_path("../json/version", __FILE__)
 
 module Fog
   # The {JSON} module includes functionality that is common between APIs using JSON to send and
