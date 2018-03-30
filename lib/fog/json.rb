@@ -22,7 +22,7 @@ module Fog
       when Hash
         data.each { |key, value| data[key] = sanitize(value) }
       when ::Time
-        data.strftime("%Y-%m-%dT%H:%M:%SZ")
+        data.strftime("%Y-%m-%dT%H:%M:%S%:z")
       else
         data
       end
