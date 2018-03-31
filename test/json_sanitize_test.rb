@@ -8,19 +8,19 @@ class TestJSONSanitizing < Minitest::Test
 
   def test_sanitize_with_array
     @data = [@time]
-    @expected = ["2014-02-14T12:34:56Z"]
+    @expected = ["2014-02-14T12:34:56+00:00"]
     assert_equal @expected, Fog::JSON.sanitize(@data)
   end
 
   def test_sanitize_with_hash
     @data = { "key" => @time }
-    @expected = { "key" => "2014-02-14T12:34:56Z" }
+    @expected = { "key" => "2014-02-14T12:34:56+00:00" }
     assert_equal @expected, Fog::JSON.sanitize(@data)
   end
 
   def test_sanitize_with_time
     @data = @time
-    @expected = "2014-02-14T12:34:56Z"
+    @expected = "2014-02-14T12:34:56+00:00"
     assert_equal @expected, Fog::JSON.sanitize(@data)
   end
 
