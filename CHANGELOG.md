@@ -1,3 +1,9 @@
+v1.2.0
+
+* Fix time parsing issue
+* Remove duplicated software licence
+* Remove `fog-core` version dependency
+
 v1.1.0
 
 * bump fog-core dependency
