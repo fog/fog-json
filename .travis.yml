@@ -8,3 +8,16 @@ matrix:
     - rvm: 2.3
     - rvm: 2.4
     - rvm: 2.5
+# ppc64le support code
+    - rvm: 2.0
+      arch: ppc64le
+    - rvm: 2.1
+      arch: ppc64le
+    - rvm: 2.2
+      arch: ppc64le
+    - rvm: 2.3
+      arch: ppc64le
+    - rvm: 2.4
+      arch: ppc64le
+    - rvm: 2.5
+      arch: ppc64le
