@@ -15,7 +15,6 @@ class TestJSONDecoding < Minitest::Test
   end
 
   def test_decode_with_nil
-    @expected = nil
-    assert_equal @expected, Fog::JSON.decode(nil)
+    assert_nil Fog::JSON.decode(nil)
   end
 end
