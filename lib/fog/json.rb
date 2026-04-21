@@ -31,13 +31,13 @@ module Fog
     # Do the MultiJson introspection at this level so we can define our encode/decode methods and
     # perform the introspection only once rather than once per call.
     def self.encode(obj)
-      MultiJson.encode(obj)
+      MultiJson.dump(obj)
     rescue => err
       raise EncodeError.slurp(err)
     end
 
     def self.decode(obj)
-      MultiJson.decode(obj)
+      MultiJson.load(obj)
     rescue => err
       raise DecodeError.slurp(err)
     end
