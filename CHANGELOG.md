@@ -1,3 +1,7 @@
+v1.3.0
+
+* fix deprecated multijson usage
+
 v1.2.0
 
 * Fix time parsing issue
