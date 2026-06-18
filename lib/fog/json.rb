@@ -1,5 +1,5 @@
 require "fog/core"
-require "multi_json"
+require "json"
 require File.expand_path("../json/version", __FILE__)
 
 module Fog
@@ -28,16 +28,16 @@ module Fog
       end
     end
 
-    # Do the MultiJson introspection at this level so we can define our encode/decode methods and
-    # perform the introspection only once rather than once per call.
     def self.encode(obj)
-      MultiJson.dump(obj)
+      ::JSON.dump(obj)
     rescue => err
       raise EncodeError.slurp(err)
     end
 
     def self.decode(obj)
-      MultiJson.load(obj)
+      obj = obj.read if obj.respond_to?(:read)
+      return if obj.nil? || obj.empty?
+      ::JSON.parse(obj)
     rescue => err
       raise DecodeError.slurp(err)
     end
