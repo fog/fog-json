@@ -1,4 +1,4 @@
-Unreleased
+v1.4.0
 
 * Replace multi_json gem with standard Ruby json gem
 
