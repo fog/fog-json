@@ -1,3 +1,7 @@
+Unreleased
+
+* Replace multi_json gem with standard Ruby json gem
+
 v1.3.0
 
 * fix deprecated multijson usage
