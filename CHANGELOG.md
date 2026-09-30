@@ -1,3 +1,7 @@
+v1.5.0 - September 30, 2026
+
+* Relax JSON version constraint /#26 (luizkowalski)
+
 v1.4.0
 
 * Replace multi_json gem with standard Ruby json gem
